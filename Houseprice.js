@@ -8,7 +8,7 @@
 "use strict";
 const PROMPT = require('readline-sync');
 
-let lotNumber, bedrooms, bathrooms, cars, price;
+let lotNumber, bedrooms, bathrooms, cars;
 const BASE_PRICE = 50000;
 
 /**
@@ -65,16 +65,16 @@ function setPrice() {
     let costBedrooms = 17000 * bedrooms;
     let costBathrooms = 12500 * bathrooms;
     let costCars = 6000 * cars;
-    let totalCost = BASE_PRICE + costBedrooms + costBathrooms + costCars;
-    printResults(totalCost);
+    let totalPrice = BASE_PRICE + costBedrooms + costBathrooms + costCars;
+    printResults(totalPrice);
 }
 
 /**
  * @method
  * @desc Clears screen and displays price of the house on a user defined lot number
- * @param totalCost - So the value can be displayed
+ * @param totalPrice - So the value can be displayed
  */
-function printResults(totalCost) {
+function printResults(totalPrice) {
     process.stdout.write('\x1Bc');
-    console.log("\nThe price of the house on lot number " + lotNumber + " is $" + totalCost + " ");
+    console.log("\nThe price of the house on lot number " + lotNumber + " is $" + totalPrice + " ");
 }
